@@ -7,7 +7,7 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get autoclean \
     && apt-get -y install dirmngr curl software-properties-common locales git cmake \
-    && useradd -d /home/container -m container \
+    && useradd -d /home/container -m container
 
     # Ensure UTF-8
 RUN locale-gen en_US.UTF-8
@@ -21,7 +21,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && npm install discord.js node-opus \
     && npm install @discordjs/uws \
     && npm install sodium \
-    && npm install sqlite3 \
+    && npm install sqlite3
 
 USER container
 ENV  USER container

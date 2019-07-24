@@ -20,7 +20,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt-get -y install nodejs node-gyp node-pre-gyp \
     && npm install discord.js node-opus \
     && npm install @discordjs/uws \
-    && npm install sodium
+    && npm install sodium \
     && npm install sqlite3 \
 
 USER container

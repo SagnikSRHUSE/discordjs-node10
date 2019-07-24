@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:stretch
 
 MAINTAINER Sagnik Sasmal, <sagnik@zadeservers.net>
 
@@ -6,8 +6,8 @@ RUN apt-get update \
     && apt-get dist-upgrade -y \
     && apt-get autoremove -y \
     && apt-get autoclean \
-    && apt-get -y install dirmngr curl software-properties-common locales git cmake apt-utils \
-    && useradd -d /home/container -m container
+    && apt-get -y install dirmngr curl software-properties-common locales git cmake \
+    && useradd -d /home/container -m container \
 
     # Ensure UTF-8
 RUN locale-gen en_US.UTF-8

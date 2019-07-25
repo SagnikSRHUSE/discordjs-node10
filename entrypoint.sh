@@ -5,4 +5,4 @@ cd /home/container
 
 # Run the Server
 npm install && npm audit fix
-${STARTUP}
+eval ${STARTUP}

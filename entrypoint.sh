@@ -1,7 +1,7 @@
 #!/bin/bash
-sleep 2
-
 cd /home/container
+
+echo ":/home/container$ ${STARTUP}"
 
 # Run the Server
 npm install && npm audit fix

@@ -7,10 +7,11 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get autoclean \
     && apt-get -y install dirmngr curl software-properties-common locales git cmake \
-    && useradd -d /home/container -m container
+    && adduser -D -h /home/container container
 
     # Ensure UTF-8
-RUN locale-gen en_US.UTF-8
+RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen \
+    && locale-gen
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
@@ -23,8 +24,8 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && npm install sqlite3
 
 USER container
-ENV  USER container
-ENV  HOME /home/container
+ENV  USER=container HOME=/home/container
+
 
 WORKDIR /home/container
 

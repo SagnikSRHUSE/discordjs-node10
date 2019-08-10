@@ -22,6 +22,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && npm install discord.js node-opus \
     && npm install @discordjs/uws \
     && npm install sqlite3
+    && npm install better-sqlite3
 
 USER container
 ENV  USER=container HOME=/home/container

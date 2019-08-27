@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM node:10
 
 MAINTAINER Sagnik Sasmal, <sagnik@zadeservers.net>
 
@@ -19,11 +19,8 @@ RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen \
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-    # NodeJS
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
-    && apt-get update \
-    && apt-get -y install nodejs node-gyp node-pre-gyp npm \
-    && apt-get -y install sqlite3 libsqlite3-dev \
+    # NodeJS Dependencies
+RUN apt-get -y install sqlite3 libsqlite3-dev \
     && npm install discord.js node-opus \
     && npm install @discordjs/uws \
     && npm install sqlite3 \
@@ -31,7 +28,6 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
 
 USER container
 ENV USER=container HOME=/home/container
-
 
 WORKDIR /home/container
 

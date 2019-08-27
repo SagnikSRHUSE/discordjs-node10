@@ -19,6 +19,7 @@ ENV LC_ALL en_US.UTF-8
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
     && apt-get update \
     && apt-get -y install nodejs node-gyp node-pre-gyp \
+    && apt-get -y install sqlite3 libsqlite3-dev \
     && npm install discord.js node-opus \
     && npm install @discordjs/uws \
     && npm install sqlite3 \

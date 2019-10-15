@@ -21,10 +21,15 @@ ENV LC_ALL en_US.UTF-8
 
     # NodeJS Dependencies
 RUN apt-get -y install sqlite3 libsqlite3-dev \
-    && npm install discord.js node-opus \
+    && npm install discord.js \
+    && npm install node-opus \
     && npm install @discordjs/uws \
+    && npm install bufferutil \
+    && npm install hammerandchisel/erlpack \
+    && npm install sodium \
+    && npm install -g node-gyp \
     && npm install sqlite3 \
-    && npm install better-sqlite3
+    && npm install better-sqlite3 \
 
 USER container
 ENV USER=container HOME=/home/container

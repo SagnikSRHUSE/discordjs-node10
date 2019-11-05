@@ -1,6 +1,6 @@
 FROM node:10
 
-MAINTAINER Sagnik Sasmal, <sagnik@zadeservers.net>
+MAINTAINER Sagnik Sasmal, <sagnik@sagnik.me>
 
 # Ignore APT warnings about not having a TTY
 ENV DEBIAN_FRONTEND noninteractive

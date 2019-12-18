@@ -24,7 +24,7 @@ ENV LC_ALL en_US.UTF-8
 # Install NodeJS Dependencies
 RUN apt-get -y install sqlite3 libsqlite3-dev \
     && npm install discord.js \
-    && npm install yarn --global
+    && npm install yarn --global \
     && npm install node-opus \
     && npm install @discordjs/uws \
     && npm install bufferutil \

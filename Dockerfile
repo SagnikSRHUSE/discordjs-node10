@@ -11,6 +11,7 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get autoclean \
     && apt-get -y install dirmngr curl software-properties-common locales git cmake \
+    && apt-get -y install ffmpeg libmp3lame libx264 \
     && adduser -D -h /home/container container
 
 # Ensure UTF-8
@@ -31,7 +32,8 @@ RUN apt-get -y install sqlite3 libsqlite3-dev \
     && npm install sodium \
     && npm install -g node-gyp \
     && npm install sqlite3 \
-    && npm install better-sqlite3
+    && npm install better-sqlite3 \
+    && npm install ffmpeg
 
 USER container
 ENV USER=container HOME=/home/container

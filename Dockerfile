@@ -12,6 +12,7 @@ RUN apt-get update \
     && apt-get autoclean \
     && apt-get -y install dirmngr curl software-properties-common locales git cmake \
     && apt-get -y install ffmpeg libmp3lame-dev x264 \
+    && apt-get -y install sqlite3 libsqlite3-dev \
     && adduser -D -h /home/container container
 
 # Ensure UTF-8
@@ -22,10 +23,8 @@ ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 # Install NodeJS Dependencies
-RUN apt-get -y install sqlite3 libsqlite3-dev \
-    && npm install discord.js \
+RUN npm install discord.js \
     && npm install node-opus \
-    && npm install @discordjs/uws \
     && npm install bufferutil \
     && npm install hammerandchisel/erlpack \
     && npm install sodium \
